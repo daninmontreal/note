@@ -1,0 +1,10 @@
+.aboutme {
+    border: 1px solid green;
+    background-color:lightgrey;
+    padding: 0.1em;
+    margin:0.5em;
+}
+
+.aboutme * {
+    background: white;
+}

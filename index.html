@@ -1,19 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Ruoyu's BLOG</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruoyu BLOG</title>
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+    <script src="js/clock.js"></script>
+    <script src="js/snake.js"></script>
 </head>
+
 <body>
-   <h1> About Me  </h1>
-   <h2>
-	   <p>I am a <b>pretty</b> and lovely gire</p>
-	   
-	   <ul>
-	   	<li><a href="">Snake</a></li>
-	   	<li><a href="">TO DO</a></li>
-	   	<li><a href="">TO DO</a></li>
-	   </ul>
-   </h2>
+    <div class="header">
+        <div class="title">
+            <h1>Welcome to Ruoyu's BLOG</h1>
+            <p>With My Study on CSS</p>
+        </div>
+
+    </div>
+
+    <div class="navbar">
+        <a href="#schedule">School</a>
+        <a href="#">Life</a>
+    </div>
+
+    <div class="row">
+        <div class="side">
+
+        </div>
+
+        <div class="main">
+            <article class="aboutme">
+                <h1> About Me </h1>
+                <h2> Introduce </h2>
+                <p>I am a <b>pretty</b> and <i><mark>lovely</mark></i> girl. My dad is Dan, and My Mom is Qian, I have a
+                    little brother
+                    Louis. I
+                    love my familly.</p>
+
+                <figure>
+                    <img src="img/me.jpg" alt="" width="301" />
+                    <figcaption>Best Girl in 2019 of Chess tournaut.</figcaption>
+                </figure>
+            </article>
+
+            <div class=timetable>
+                <h2 id="schedule">Schedule</h2>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th scope="col">Mon.</th>
+                        <th scope="col">Tu.</th>
+                        <th scope="col">Wen.</th>
+                        <th scope="col">Thur.</th>
+                        <th scope="col">Fri.</th>
+                        <th scope="col">Sat.</th>
+                        <th scope="col">Sun.</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Math</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">French</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">English</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2 style="align-self: flex-start;">Game</h2>
+            <div class="game">
+                <div class="clock" id="clock">
+                    <canvas id="canvas"></canvas>
+                </div>
+                <div class="snake" id="snake" tabindex="0">
+                    <canvas id="snakeCanvas"></canvas>
+                </div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="foot">
+        <p>About Me</p>
+    </div>
+
+    <script>
+        startTimer();
+        startSnake();
+    </script>
 </body>
+
 </html>

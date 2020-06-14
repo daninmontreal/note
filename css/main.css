@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    background-color: cornflowerblue;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    width: 90%;;
+    text-align: center;
+    margin:0 auto 0 auto;
+    background-color: cornflowerblue;
+    color:white;
+    padding: 6px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    background-color: burlywood;
+}
+
+.navbar>a {
+    text-decoration: none;
+    text-align: center;
+    color:white;
+    padding: 14px 20px;
+}
+
+.navbar>a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.side {
+    flex: 10%;
+    min-height: 500px;
+    padding: 20px;
+    background-color: whitesmoke;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 90%;
+    padding: 20px;
+    background-color: white;
+}
+
+.timetable {
+    width: 100%;
+}
+
+.timetable>table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    padding: 2px;    
+}
+
+tr:nth-child(odd) {
+    background-color: #f2f2f2;
+    padding: 8px;
+}
+
+tr:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.foot {
+    text-align: center;
+    background-color: bisque;
+    color: olivedrab;
+    padding: 10px;
+}
+
+.aboutme {
+    align-self: flex-start;
+    padding: 0.1em;
+    margin:0.5em;
+}
+
+.game {
+    align-self: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.clock, .game>div {
+    background-color: #f1f1f1;
+    margin: 10px 10px 10px 0px;
+    width: 400px;
+    height: 400px;
+}
+
+#canvas {
+    margin: 0 auto 0 auto;
+}
