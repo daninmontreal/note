@@ -53,7 +53,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex: 90%;
+    flex: 100%;
     padding: 20px;
     background-color: white;
 }
@@ -67,17 +67,17 @@
     border-collapse: collapse;
 }
 
-td, th {
+.timetable td, th {
     border: 1px solid #ddd;
     padding: 2px;    
 }
 
-tr:nth-child(odd) {
+.timetable tr:nth-child(odd) {
     background-color: #f2f2f2;
     padding: 8px;
 }
 
-tr:hover {
+.timetable tr:hover {
     background-color: #4CAF50;
     color: white;
 }
@@ -101,6 +101,11 @@ tr:hover {
     flex-wrap: wrap;
 }
 
+.GameName {
+    text-align: center;
+}
+
+/**/
 .clock, .game>div {
     background-color: #f1f1f1;
     margin: 10px 10px 10px 0px;
@@ -108,6 +113,57 @@ tr:hover {
     height: 400px;
 }
 
+/**/
 #canvas {
     margin: 0 auto 0 auto;
+}
+
+/**/
+.tictactoe {
+    width: 80%;
+    height: 80%;
+    margin: 0px auto 0px auto;
+    background-color: white;
+    border-collapse: collapse;  
+}
+
+.tictactoe tr {
+   border: 1px grey solid; 
+}
+.tictactoe td {
+    border: 1px grey solid;
+    text-align: center;
+    font-size: 30pt;
+    font-family: monospace;
+    width: 33%;
+    height: 33%; 
+}
+
+.tictactoe td:hover {
+    background-color: grey;
+    cursor:pointer;
+}
+
+/**/
+.calculator {
+    overflow: auto;
+    width: 80%;
+    height: 85%;
+    margin: 0px auto 0px auto;
+    background-color: white;    
+}
+
+.number {
+    float: left;
+    margin: 0px 0px 0px 0px;
+    width: 25%;
+    height: 23%;
+    text-align: center;
+}
+
+.result {
+    width: 100%;
+    height: 8%;
+    text-align: right;
+    border-radius: 4px;
 }

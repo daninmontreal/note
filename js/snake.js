@@ -13,7 +13,7 @@ function createFood(gameCanvas) {
   snake.forEach(function isFoodOnSnake(part) {
     const foodIsOnSnake = part.x == foodX && part.y == foodY;
     if (foodIsOnSnake)
-      createFood();
+      createFood(gameCanvas);
   });
 }
 
@@ -75,15 +75,47 @@ function startSnake(restarted = false) {
     console.log(snake);
     createFood(canvas);
     refresh();
-    divOfCanvas.addEventListener("keydown", changeDirection);
-    divOfCanvas.addEventListener("focus", (event)=> {
-      ready = true;      
+    divOfCanvas.addEventListener("keydown", (event) => {
+      changeDirection(event, event.keyCode);
     });
+    divOfCanvas.addEventListener("focus", (event) => {
+      ready = true;
+    });
+    divOfCanvas.addEventListener("focusout", (event) => {
+      ready = false;
+    });
+
+    var hammerOfSnake = new Hammer.Manager(divOfCanvas);
+    hammerOfSnake.add(new Hammer.Swipe({ direction: Hammer.DIRECTION_ALL }));
+
+    hammerOfSnake.on("swipeleft", function (event) {
+      if (!ready)
+        return;
+      changeDirection(event, 37);
+    });
+
+    hammerOfSnake.on("swiperight", function (event) {
+      if (!ready)
+        return;
+      changeDirection(event, 39);
+    });
+
+    hammerOfSnake.on("swipeup", function (event) {
+      if (!ready)
+        return;
+      changeDirection(event, 38);
+    });
+
+    hammerOfSnake.on("swipedown", function (event) {
+      if (!ready)
+        return;
+      changeDirection(event, 40);
+    })
   }
 
   setTimeout(function onTick() {
-    if(!ready){
-      startSnake(true); 
+    if (!ready) {
+      startSnake(true);
       return;
     }
     changingDirection = false;
@@ -110,13 +142,13 @@ function drawSnake(canvas, ctx, div) {
 function step(canvas, ctx, div, dx, dy) {
   const head = { x: snake[0].x + dx, y: snake[0].y + dy };
   snake.unshift(head);
-  const didEatFood = snake[0].x === foodX && snake[0].y === foodY;  
+  const didEatFood = snake[0].x === foodX && snake[0].y === foodY;
   if (didEatFood) {
     score += 1;
-    speed -= 10;    
-    createFood(canvas);  
-  } else {    
-    snake.pop();  
+    speed -= 10;
+    createFood(canvas);
+  } else {
+    snake.pop();
   }
 }
 
@@ -125,17 +157,16 @@ function clear(canvas, ctx) {
   ctx.fillRect(0, 0, canvas.width, canvas.height); ctx.strokeRect(0, 0, canvas.width, canvas.height);
 }
 
-function changeDirection(event) {
+function changeDirection(event, keyPressed) {
   const LEFT_KEY = 37; const RIGHT_KEY = 39; const UP_KEY = 38; const DOWN_KEY = 40;
   event.preventDefault();
-  if(changingDirection) return;
+  if (changingDirection) return;
   changingDirection = true;
   let divOfCanvas = document.getElementById("snake");
   if (document.activeElement != divOfCanvas) {
     return;
   }
 
-  const keyPressed = event.keyCode;
 
   const goingUp = dy === -10;
   const goingDown = dy === 10;
@@ -147,4 +178,12 @@ function changeDirection(event) {
   if (keyPressed === RIGHT_KEY && !goingLeft) { dx = 10; dy = 0; }
   if (keyPressed === DOWN_KEY && !goingDown) { dx = 0; dy = 10; }
 
+}
+
+if (document.readyState != 'loading') {
+  startSnake();
+} else {
+  window.addEventListener('DOMContentLoaded', () => {
+    startSnake();
+  });
 }
