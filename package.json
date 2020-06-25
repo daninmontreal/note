@@ -1,0 +1,26 @@
+{
+  "name": "note",
+  "version": "1.0.0",
+  "description": "just a test server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daninmontreal/note.git"
+  },
+  "keywords": [
+    "note",
+    "test"
+  ],
+  "author": "Dan Wang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daninmontreal/note/issues"
+  },
+  "homepage": "https://github.com/daninmontreal/note#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
