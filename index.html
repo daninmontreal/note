@@ -7,13 +7,14 @@
     <title>Ruoyu BLOG</title>
     <link href="css/main.css" type="text/css" rel="stylesheet">
     <link href="css/game2048.css" type="text/css" rel="stylesheet">
-    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/snake.js"></script>
     <script src="js/tictoe.js"></script>
     <script src="js/calc.js"></script>
     <script src="js/block.js"></script>
     <script src="js/2048.js"></script>
+    <script src="js/aiface.js"></script>
     
 </head>
 
@@ -121,9 +122,11 @@
 
                     </div>
                 </div>
+
                 <div class="snake" id="snake" tabindex="0">
                     <canvas id="snakeCanvas"></canvas>
                 </div>
+
                 <div>
                     <p>Tic Tac Toe</p>
                     <table class="tictactoe">
@@ -144,6 +147,7 @@
                         </tr>
                     </table>
                 </div>
+
                 <div>
                     <p>Calculator</p>
                     <div class="calculator">
@@ -178,8 +182,9 @@
                     <canvas id="canvas"></canvas>
                 </div>
 
-
-                <div></div>
+                <div>
+                    <video id="me" autoplay muted></video> 
+                </div>
             </div>
         </div>
 
@@ -190,8 +195,9 @@
     </div>
 
     <script>
-        startTimer();
+        console.log("started");
     </script>
+
 </body>
 
 </html>
