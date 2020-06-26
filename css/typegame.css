@@ -1,0 +1,47 @@
+#current-word {
+    font-size: 2em;
+    text-align: center;
+    margin: 0 2em;
+}
+
+.input-wrap {
+    display: flex;
+}
+
+#input {
+    flex:1;
+    border: 5px solid #F08080;
+    border-radius: 5px;
+
+    font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+#input:focus {
+    border-color: #2E8B57;
+}
+
+/* Info */
+.info {
+    display: flex;
+    justify-content: space-between;
+    padding: .8em 0;
+}
+
+/* Reset */
+#reset {
+    margin: 0 auto;
+    padding: .5em 1em;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: #FAEBD7;
+    color: #2E8B57;
+    border: 5px solid #F08080;
+    border-radius: 5px;
+    display: block;
+}
+#reset:hover,
+#reset:focus {
+    background: #F08080;
+}

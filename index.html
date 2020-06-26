@@ -7,16 +7,17 @@
     <title>Ruoyu BLOG</title>
     <link href="css/main.css" type="text/css" rel="stylesheet">
     <link href="css/game2048.css" type="text/css" rel="stylesheet">
+    <link href="css/typegame.css" type="text/css" rel="stylesheet">
     <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
-    <script src="js/face-api.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/snake.js"></script>
     <script src="js/tictoe.js"></script>
     <script src="js/calc.js"></script>
     <script src="js/block.js"></script>
     <script src="js/2048.js"></script>
-    <script src="js/aiface.js"></script>
-    
+    <script src="js/typegame.js"></script>
+    <!--script src="js/aiface.js"></script-->
+
 </head>
 
 <body>
@@ -183,8 +184,28 @@
                     <canvas id="canvas"></canvas>
                 </div>
 
-                <div>
+                <!--div>
                     <video id="me" autoplay muted></video> 
+                </div-->
+
+                <div>
+                    <p>Type the Given Word Within <em>7</em> Seconds:</p>
+
+                    <div id="current-word">establishment</div>
+
+                    <div class="input-wrap">
+                        <input id="input" type="text" placeholder="Type here"></input>
+                    </div>
+                    <div class=info>
+                        <div>Time Left:
+                            <span id="timer">7</span>
+                        </div>
+                        <div>Score:
+                            <span id="score">0</span>
+                        </div>
+                    </div>
+
+                    <button id="reset">Start over</button>
                 </div>
             </div>
         </div>
@@ -195,9 +216,8 @@
         <p>About Me</p>
     </div>
 
-    <script>
-        console.log("started");
-    </script>
+    <!--script>
+    </script-->
 
 </body>
 
