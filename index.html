@@ -10,6 +10,7 @@
     <link href="css/typegame.css" type="text/css" rel="stylesheet">
     <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+    <script src="js/p5.easycam.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/snake.js"></script>
@@ -18,7 +19,8 @@
     <script src="js/block.js"></script>
     <script src="js/2048.js"></script>
     <script src="js/typegame.js"></script>
-    <script src="js/p5demo.js"></script>
+    <script src="js/fireworks.js"></script>
+    <script src="js/earth3d.js"></script>
     <!--script src="js/aiface.js"></script-->
 
 
@@ -129,31 +131,6 @@
                     </div>
                 </div>
 
-                <div class="snake" id="snake" tabindex="0">
-                    <canvas id="snakeCanvas"></canvas>
-                </div>
-
-                <div>
-                    <p>Tic Tac Toe</p>
-                    <table class="tictactoe">
-                        <tr>
-                            <td id="tic1" onclick="onCellClick('tic1', 1)">&nbsp;</td>
-                            <td id="tic2" onclick="onCellClick('tic2', 2)">&nbsp;</td>
-                            <td id="tic3" onclick="onCellClick('tic3', 3)">&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td id="tic4" onclick="onCellClick('tic4', 4)">&nbsp;</td>
-                            <td id="tic5" onclick="onCellClick('tic5', 5)">&nbsp;</td>
-                            <td id="tic6" onclick="onCellClick('tic6', 6)">&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td id="tic7" onclick="onCellClick('tic7', 7)">&nbsp;</td>
-                            <td id="tic8" onclick="onCellClick('tic8', 8)">&nbsp;</td>
-                            <td id="tic9" onclick="onCellClick('tic9', 9)">&nbsp;</td>
-                        </tr>
-                    </table>
-                </div>
-
                 <div>
                     <p>Calculator</p>
                     <div class="calculator">
@@ -180,17 +157,38 @@
                     </div>
                 </div>
 
-                <div class="block" id="block" tabindex="0">
-                    <canvas id="blockCanvas"></canvas>
+                <div id="p5main">
+                </div>
+
+                <div id="p5earth">
                 </div>
 
                 <div class="clock" id="clock">
                     <canvas id="canvas"></canvas>
                 </div>
 
-                <!--div>
-                    <video id="me" autoplay muted></video> 
-                </div-->
+                <div>
+                    <p>Tic Tac Toe</p>
+                    <table class="tictactoe">
+                        <tr>
+                            <td id="tic1" onclick="onCellClick('tic1', 1)">&nbsp;</td>
+                            <td id="tic2" onclick="onCellClick('tic2', 2)">&nbsp;</td>
+                            <td id="tic3" onclick="onCellClick('tic3', 3)">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td id="tic4" onclick="onCellClick('tic4', 4)">&nbsp;</td>
+                            <td id="tic5" onclick="onCellClick('tic5', 5)">&nbsp;</td>
+                            <td id="tic6" onclick="onCellClick('tic6', 6)">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td id="tic7" onclick="onCellClick('tic7', 7)">&nbsp;</td>
+                            <td id="tic8" onclick="onCellClick('tic8', 8)">&nbsp;</td>
+                            <td id="tic9" onclick="onCellClick('tic9', 9)">&nbsp;</td>
+                        </tr>
+                    </table>
+                </div>
+
+                
 
                 <div>
                     <p>Type the Given Word Within <em>7</em> Seconds:</p>
@@ -212,8 +210,14 @@
                     <button id="reset">Start over</button>
                 </div>
 
-                <div id="p5container">
+                <div class="snake" id="snake" tabindex="0">
+                    <canvas id="snakeCanvas"></canvas>
                 </div>
+
+                <div class="block" id="block" tabindex="0">
+                    <canvas id="blockCanvas"></canvas>
+                </div>
+
             </div>
         </div>
 

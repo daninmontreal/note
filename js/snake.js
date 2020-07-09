@@ -59,7 +59,7 @@ function startSnake(restarted = false) {
   let canvas = document.getElementById("snakeCanvas");
   let ctx = canvas.getContext("2d");
   let refresh = () => {
-    clear(canvas, ctx);
+    clearBG(canvas, ctx);
     drawGrid(ctx, canvas);
     drawSnake(canvas, ctx, divOfCanvas);
     drawFood(ctx);
@@ -152,7 +152,7 @@ function step(canvas, ctx, div, dx, dy) {
   }
 }
 
-function clear(canvas, ctx) {
+function clearBG(canvas, ctx) {
   ctx.fillStyle = "white"; ctx.strokeStyle = "black";
   ctx.fillRect(0, 0, canvas.width, canvas.height); ctx.strokeRect(0, 0, canvas.width, canvas.height);
 }
