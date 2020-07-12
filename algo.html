@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alogrithm Show Time</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+    <script src="js/p5.easycam.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="algo/qsort.js"></script>
+    <script src="algo/a.js"></script>
+
+    <style>
+        body {
+            box-sizing: border-box;
+            margin: 4px;
+            
+        }
+
+        .header {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            border: 0px;
+            background-color:hotpink;
+        } 
+
+        .main {
+            display: flex;
+            border: 0px;
+            background-color: gainsboro;
+            flex-wrap: wrap;
+            color:seagreen
+        }
+
+        .algo {
+            width: 100%;
+            margin: 2px;
+            background-color: white;
+        }
+
+        #shortp {
+            margin: 0px auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Alogrithm in Computer Science</h1>
+    </div>
+    <div class="main">
+        <div class="algo">
+            <h3>Shortest Path A* Alog</h3> 
+            <div class="algo">
+                <div id="shortp">
+
+                </div>
+            </div>
+         </div> 
+
+        <div class="algo">
+           <h3>Quick sort</h3> 
+           <div id="qsort"></div>
+        </div>     
+
+        
+    </div>
+    <br>
+</body>
+</html>
