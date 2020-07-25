@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird</title>
+    <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+    <style>
+        #game {
+            background: silver;
+            height: 512px;
+            text-align: center;
+            font: 30px/300px Helvetica, Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="game">
+        <canvas id="canvas" width="288" height="512"></canvas> 
+    </div>
+    
+
+    <script>
+        var cvs = document.getElementById("canvas");
+        var ctx = cvs.getContext("2d");
+        var bird = new Image();
+        var bg = new Image();
+        var fg = new Image();
+        var pipeUp = new Image();
+        var pipeDown = new Image();
+
+        bird.src = "img/bird.png";
+        bg.src = "img/bg.png";
+        fg.src = "img/fg.png";
+        pipeUp.src = "img/pipeNorth.png";
+        pipeDown.src = "img/pipeSouth.png";
+
+        var H = cvs.height;
+        var W = cvs.width;
+
+        var bx, by;
+        by = H / 2 - fg.height / 2; //Math.random()*H;
+        bx = 0;
+        var gravity = 1.5;
+
+        var score = 100;
+
+        var pipes = [{
+            x: cvs.width - pipeDown.width,
+            y: 0
+        }];
+
+        const constant = 150;
+
+        function birdPos() {
+            if (by + gravity + bird.height >= (H - fg.height)) {
+                by = H - fg.height - bird.height;
+            } else {
+                by += gravity;
+            }
+            return by;
+        }
+
+        function testCollision(pipe) {
+            return bx + bird.width >= pipe.x &&
+                bx <= pipe.x + pipeUp.width &&
+                (by < pipe.y + pipeUp.height || by + bird.height >= pipe.y + pipeUp.height + constant) ||
+                by + bird.height >= cvs.height - fg.height
+        }
+
+        function draw() {
+
+            //gameOver();
+
+            ctx.drawImage(bg, 0, 0);
+
+            ctx.drawImage(bird, bx, by);
+
+            pipes.forEach(pipe => {
+                if (pipe.x > 0) {
+                    ctx.drawImage(pipeUp, pipe.x, pipe.y);
+                    ctx.drawImage(pipeDown, pipe.x, pipe.y + pipeUp.height + constant);
+                    pipe.x--;
+                    testCollision(pipe);
+                    if (pipe.x == 5) {
+                        score++;
+                    }
+                }
+            });
+
+            let pipe = pipes[pipes.length - 1];
+            if (pipe.x == cvs.width / 4) {
+                pipes.push({
+                    x: cvs.width - pipeDown.width,
+                    y: Math.floor(Math.random() * pipeUp.height) - pipeUp.height + 10
+                })
+            }
+
+            ctx.drawImage(fg, 0, H - fg.height);
+
+            birdPos();
+
+
+            ctx.fillStyle = "#000";
+            ctx.font = "20px Verdana";
+            ctx.fillText("Score : " + score, 10, cvs.height - 20);
+
+            requestAnimationFrame(draw);
+        }
+
+        function onKeyDown() {
+            by -= gravity * 10;
+            if (by < 0)
+                by = 0;
+        }
+
+        document.addEventListener("keydown", onKeyDown);
+
+        function run() {
+            var div = document.getElementById("game");
+            var hammer = Hammer(div);
+
+            hammer.on("tap press", function (event) {
+                onKeyDown();
+            })
+
+            draw();
+        }
+
+        if (document.readyState != 'loading') {
+            run();
+        } else {
+            window.addEventListener('DOMContentLoaded', run);
+        }
+
+    </script>
+</body>
+
+</html>
