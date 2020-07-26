@@ -110,20 +110,23 @@
             requestAnimationFrame(draw);
         }
 
-        function onKeyDown() {
-            by -= gravity * 10;
+        function onKeyDown(e, flag=10) {
+            e.preventDefault();  
+            by -= gravity * flag;
             if (by < 0)
                 by = 0;
         }
 
-        document.addEventListener("keydown", onKeyDown);
+        document.addEventListener("keydown", (e)=>{
+            onKeyDown(e);
+        });
 
         function run() {
             var div = document.getElementById("game");
             var hammer = Hammer(div);
 
-            hammer.on("tap press", function (event) {
-                onKeyDown();
+            hammer.on("tap press", function (e) {
+                onKeyDown(e, 35);
             })
 
             draw();
