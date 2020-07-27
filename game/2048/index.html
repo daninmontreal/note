@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048</title>
+    <style>
+        .container {
+            display: grid;
+            width: 512px;
+            height: 512px;
+            border: solid 1px orange;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 3px;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            grid-gap: 2px;
+            background: #baaca1;
+            border-radius: 8px;
+        }
+
+        .item {
+            font-size: 1.5em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #71675e;
+            border: solid 1px black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="game2048">
+
+        <div class="item item_00"></div>
+        <div class="item item_10"></div>
+        <div class="item item_20"></div>
+        <div class="item item_30"></div>
+
+        <div class="item item_01"></div>
+        <div class="item item_11"></div>
+        <div class="item item_21"></div>
+        <div class="item item_31"></div>
+
+        <div class="item item_02"></div>
+        <div class="item item_12"></div>
+        <div class="item item_22"></div>
+        <div class="item item_32"></div>
+
+        <div class="item item_03"></div>
+        <div class="item item_13"></div>
+        <div class="item item_23"></div>
+        <div class="item item_33"></div>
+
+    </div>
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
+    <script src="2048.js"></script>
+</body>
+
+</html>
