@@ -1,35 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-</head>
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="assets/css/styles.css">
 
-<body>
-    <div>
-        <ul>
-            <li><a href="game/2048/index.html">2048</a></li>
-            <li><a href="game/flappybird/index.html">Flappy Bird</a></li>
-            <li><a href="game/tictactoe/index.html">Tic Tac Toe</a></li>
-        </ul>
-    </div>
+        <!-- ===== BOX ICONS ===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-    <div>
-        <ul>
-            <li><a href="tools/weather/index.html">Weather</a></li>
-            <li><a href="tools/Budget/index.html">Budget</a></li>
-            <li><a href="tools/covid19/index.html">Montreal</a></li>
-        </ul>
-    </div>
+        <title>Portfolio responsive complete</title>
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav__logo">Ruoyu Wang</a>
+                </div>
 
-    <div>
-        <ul>
-            <li><a href="algo/index.html">Computer Science Algorithm</a>
-            </li>
-        </ul>
-    </div>
-</body>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#games" class="nav__link">Tools</a></li>
+                        <li class="nav__item"><a href="#tools" class="nav__link">Games</a></li>
+                        <li class="nav__item"><a href="#algo" class="nav__link">Algorithm</a></li>
+                    </ul>
+                </div>
 
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--===== Games =====-->
+            <section class="portfolio section" id="games">
+                <h2 class="section-title">Games</h2>
+                <div class="portfolio__container bd-grid">
+                    <div class="portfolio__img">
+                        <img src="assets/img/2048.jpg" alt="">
+
+                        <div class="portfolio__link">
+                            <a href="game/2048/index.html" class="portfolio__link-name">View details</a>
+                        </div>
+                    </div>
+
+                    <div class="portfolio__img">
+                        <img src="assets/img/flappybird.jpg" alt="">
+
+                        <div class="portfolio__link">
+                            <a href="game/flappybird/index.html" class="portfolio__link-name">View details</a>
+                        </div>
+                    </div>
+
+                    <div class="portfolio__img">
+                        <img src="assets/img/tictactoe.jpg" alt="">
+
+                        <div class="portfolio__link">
+                            <a href="game/tictactoe/index.html" class="portfolio__link-name">View details</a>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </section>
+
+            <!--===== Tools =====-->
+            <section class="portfolio section" id="tools">
+                <h2 class="section-title">Tools</h2>
+                <div class="portfolio__container bd-grid">
+                    <div class="portfolio__img">
+                        <img src="assets/img/weather.jpg" alt="">
+
+                        <div class="portfolio__link">
+                            <a href="tools/weather/index.html" class="portfolio__link-name">View details</a>
+                        </div>
+                    </div>
+
+                    <div class="portfolio__img">
+                        <img src="assets/img/budget.jpg" alt="">
+
+                        <div class="portfolio__link">
+                            <a href="tools/Budget/index.html" class="portfolio__link-name">View details</a>
+                        </div>
+                    </div>
+
+                    <div class="portfolio__img">
+                        <img src="assets/img/covid19.jpg" alt="">
+
+                        <div class="portfolio__link">
+                            <a href="tools/covid19/index.html" class="portfolio__link-name">View details</a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+             <!--===== Algorithm=====-->
+            <section class="portfolio section" id="algo">
+                <h2 class="section-title">Algorithm</h2>
+                <div class="portfolio__container bd-grid">
+                    <div class="portfolio__img">
+                        <img src="assets/img/algo.jpg" alt="">
+                        <div class="portfolio__link">
+                            <a href="algo/index.html" class="portfolio__link-name">View details</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src="assets/js/main.js"></script>
+    </body>
 </html>
