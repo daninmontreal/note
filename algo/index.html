@@ -10,10 +10,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
 
-    <script src="algo/qsort.js"></script>
-    <script src="algo/a.js"></script> 
-    <script src="algo/chart.js"></script>
-    <script src="algo/quadtree.js"></script>
+    <script src="js/qsort.js"></script>
+    <script src="js/a.js"></script> 
+    <script src="js/chart.js"></script>
+    <script src="js/quadtree.js"></script>
+    <script src="js/metaball.js"></script>
 
     <style>
         body {
@@ -44,8 +45,12 @@
             background-color: white;
         }
 
-        #shortp,  #quadtree{
+        #shortp,  #quadtree, #metaball{
             margin: 0px auto;
+        }
+
+        #metaball{
+            border:1px gray solid;
         }
 
     </style>
@@ -55,6 +60,15 @@
         <h1>Alogrithm in Computer Science</h1>
     </div>
     <div class="main">
+
+        <div class="algo">
+            <h3>MetaBall</h3> 
+            <div class="algo">
+                <div id="metaball">
+
+                </div>
+            </div>
+         </div>  
 
         <div class="algo">
             <h3>Montreal</h3> 
@@ -71,7 +85,7 @@
          </div> 
 
         <div class="algo">
-            <h3>Shortest Path A* Alog</h3> 
+            <h3>Shortest Path A* Algorithm</h3> 
             <div class="algo">
                 <div id="shortp">
 

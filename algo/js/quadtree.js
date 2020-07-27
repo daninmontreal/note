@@ -41,7 +41,7 @@ class QuadTree {
     add(x, y) {
        if(this.dataSet.length < this.capacity || this.level == MAX_LEVEL){
            this.dataSet.push(new GeoPoint(x, y));
-           console.log(`add new point (${x}, ${y})`);
+           //console.log(`add new point (${x}, ${y})`);
            return; 
        } 
 

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruoyu BLOG</title>
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+    <link href="css/game2048.css" type="text/css" rel="stylesheet">
+    <link href="css/typegame.css" type="text/css" rel="stylesheet">
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+    <script src="js/p5.easycam.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/snake.js"></script>
+    <script src="js/tictoe.js"></script>
+    <script src="js/calc.js"></script>
+    <script src="js/block.js"></script>
+    <script src="js/2048.js"></script>
+    <script src="js/typegame.js"></script>
+    <script src="js/fireworks.js"></script>
+    <script src="js/earth3d.js"></script>
+    <!--script src="js/aiface.js"></script-->
+
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="title">
+            <h1>Welcome to Ruoyu's BLOG</h1>
+            <p>With My Study on CSS</p>
+        </div>
+
+    </div>
+
+    <div class="navbar">
+        <a href="#schedule">School</a>
+        <a href="#">Life</a>
+    </div>
+
+    <div class="row">
+        <div class="main">
+            <article class="aboutme">
+                <h1> About Me </h1>
+                <h2> Introduce </h2>
+                <p>I am a <b>pretty</b> and <i><mark>lovely</mark></i> girl. My dad is Dan, and My Mom is Qian, I have a
+                    little brother
+                    Louis. I
+                    love my familly.</p>
+
+                <figure>
+                    <img src="img/me.jpg" alt="" width="301" />
+                    <figcaption>Best Girl in 2019 of Chess tournaut.</figcaption>
+                </figure>
+            </article>
+
+            <div class=timetable>
+                <h2 id="schedule">Schedule</h2>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th scope="col">Mon.</th>
+                        <th scope="col">Tu.</th>
+                        <th scope="col">Wen.</th>
+                        <th scope="col">Thur.</th>
+                        <th scope="col">Fri.</th>
+                        <th scope="col">Sat.</th>
+                        <th scope="col">Sun.</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Math</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">French</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">English</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2 style="align-self: flex-start;">Game</h2>
+            <div class="game">
+                <div id="game2048" tabindex="0">
+                    <p class="GameName">Game 2048</p>
+                    <div class="game2048">
+
+                        <div class="item item_00"></div>
+                        <div class="item item_10"></div>
+                        <div class="item item_20"></div>
+                        <div class="item item_30"></div>
+
+                        <div class="item item_01"></div>
+                        <div class="item item_11"></div>
+                        <div class="item item_21"></div>
+                        <div class="item item_31"></div>
+
+                        <div class="item item_02"></div>
+                        <div class="item item_12"></div>
+                        <div class="item item_22"></div>
+                        <div class="item item_32"></div>
+
+                        <div class="item item_03"></div>
+                        <div class="item item_13"></div>
+                        <div class="item item_23"></div>
+                        <div class="item item_33"></div>
+
+                    </div>
+                </div>
+
+                <div>
+                    <p>Calculator</p>
+                    <div class="calculator">
+                        <input type="text" class="result" id="result" />
+                        <button class="number" onclick="onClick(7)">7</button>
+                        <button class="number" onclick="onClick(8)">8</button>
+                        <button class="number" onclick="onClick(9)">9</button>
+                        <button class="number" onclick="onCompute('+')">+</button>
+
+                        <button class="number" onclick="onClick(4)">4</button>
+                        <button class="number" onclick="onClick(5)">5</button>
+                        <button class="number" onclick="onClick(6)">6</button>
+                        <button class="number" onclick="onCompute('-')">-</button>
+
+                        <button class="number" onclick="onClick(1)">1</button>
+                        <button class="number" onclick="onClick(2)">2</button>
+                        <button class="number" onclick="onClick(3)">3</button>
+                        <button class="number" onclick="onCompute('*')">*</button>
+
+                        <button class="number" onclick="onClick(0)">0</button>
+                        <button class="number" onclick="calculate()">=</button>
+                        <button class="number" onclick="onClear()">C</button>
+                        <button class="number" onclick="onCompute('/')">/</button>
+                    </div>
+                </div>
+
+                <div id="p5main">
+                </div>
+
+                <div id="p5earth">
+                </div>
+
+                <div class="clock" id="clock">
+                    <canvas id="canvas"></canvas>
+                </div>
+
+                <div>
+                    <p>Tic Tac Toe</p>
+                    <table class="tictactoe">
+                        <tr>
+                            <td id="tic1" onclick="onCellClick('tic1', 1)">&nbsp;</td>
+                            <td id="tic2" onclick="onCellClick('tic2', 2)">&nbsp;</td>
+                            <td id="tic3" onclick="onCellClick('tic3', 3)">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td id="tic4" onclick="onCellClick('tic4', 4)">&nbsp;</td>
+                            <td id="tic5" onclick="onCellClick('tic5', 5)">&nbsp;</td>
+                            <td id="tic6" onclick="onCellClick('tic6', 6)">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td id="tic7" onclick="onCellClick('tic7', 7)">&nbsp;</td>
+                            <td id="tic8" onclick="onCellClick('tic8', 8)">&nbsp;</td>
+                            <td id="tic9" onclick="onCellClick('tic9', 9)">&nbsp;</td>
+                        </tr>
+                    </table>
+                </div>
+
+                
+
+                <div>
+                    <p>Type the Given Word Within <em>7</em> Seconds:</p>
+
+                    <div id="current-word">establishment</div>
+
+                    <div class="input-wrap">
+                        <input id="input" type="text" placeholder="Type here"></input>
+                    </div>
+                    <div class=info>
+                        <div>Time Left:
+                            <span id="timer">7</span>
+                        </div>
+                        <div>Score:
+                            <span id="score">0</span>
+                        </div>
+                    </div>
+
+                    <button id="reset">Start over</button>
+                </div>
+
+                <div class="snake" id="snake" tabindex="0">
+                    <canvas id="snakeCanvas"></canvas>
+                </div>
+
+                <div class="block" id="block" tabindex="0">
+                    <canvas id="blockCanvas"></canvas>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="foot">
+        <p>About Me</p>
+    </div>
+
+</body>
+
+</html>
